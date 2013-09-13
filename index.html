@@ -31,11 +31,34 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>SlimBlog</h1>
+        <h1>
+<a name="slimblog" class="anchor" href="#slimblog"><span class="octicon octicon-link"></span></a>SlimBlog</h1>
 
 <p>Flat File Blog made using Slim Framework</p>
 
-<p>Thank you for visiting SlimBlog. It is a simple, easy to use PHP flat-file blog engine built on top of Slim Framework</p>
+<p>Thank you for visiting SlimBlog. It is a simple, easy to use PHP flat-file blog engine built on top of Slim Framework.</p>
+
+<p>To deply simply place it on a webserver in a publicly accessable folder and make sure apache can see the folder.</p>
+
+<p>Files need to be uploaded in markdown format, as the document parser reads markdown.</p>
+
+<p>All articles need to start with a JSON string at the top that provides the document meta-data and associated title etc. </p>
+
+<pre><code>{
+   "title" : "This is my first article",
+   "date"  : "02/15/2012",
+   "slug"  : "first-article",
+   "author": "Author name"
+}
+</code></pre>
+
+<p>See the above example there for how to format the JSON correctly. When you save the article, make sure you save it with the same value you place in the slug field in the JSON.</p>
+
+<p>The application looks for the route http://yourwebsite/slug which is a handler that points to the articles folder.</p>
+
+<p>For example <code>http://yourwebsite/first-article</code> will look for <code>articles/first-article.txt</code> and then attempt to parse it.</p>
+
+<p>If you are interested in more of my work, head over to my made repository list available on GitHub at <a href="http://davidsivocha.github.io">my github profile</a> or at my my personal site <a href="http://sivocha.com">Sivocha</a>.</p>
       </section>
     </div>
 
@@ -47,7 +70,17 @@
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-43986260-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
